@@ -151,6 +151,42 @@
   }
 
   loadJobs();
+  async function applyJob(jobId) {
+  const name = prompt("Apna naam likho:");
+  if (!name) return;
+
+  const phone = prompt("Apna mobile number likho:");
+  if (!phone) return;
+
+  try {
+    const response = await fetch(
+      `${SUPABASE_URL}/rest/v1/applications`,
+      {
+        method: "POST",
+        headers: {
+          "apikey": SUPABASE_KEY,
+          "Authorization": `Bearer ${SUPABASE_KEY}`,
+          "Content-Type": "application/json",
+          "Prefer": "return=minimal"
+        },
+        body: JSON.stringify({
+          job_id: jobId,
+          student_id: phone,
+          name: name,
+          phone: phone
+        })
+      }
+    );
+
+    if (response.ok) {
+      alert("Application successfully submit ho gayi! 🎉");
+    } else {
+      alert("Application submit nahi hui.");
+    }
+  } catch (error) {
+    alert("Kuch error aa gaya.");
+  }
+  }
 </script>
 
 </body>
