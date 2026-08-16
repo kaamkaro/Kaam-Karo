@@ -124,7 +124,12 @@
           }
         }
       );
-
+       if (!response.ok) {
+  const errorText = await response.text();
+  document.getElementById("jobs").innerHTML =
+    "<p>Supabase Error: " + errorText + "</p>";
+  return;
+       }
       const jobs = await response.json();
 
       const jobsDiv = document.getElementById("jobs");
