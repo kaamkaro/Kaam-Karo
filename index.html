@@ -181,7 +181,8 @@
     if (response.ok) {
       alert("Application successfully submit ho gayi! 🎉");
     } else {
-      alert("Application submit nahi hui.");
+      alert(const errorText = await response.text();
+alert("Error: " + errorText);
     }
   } catch (error) {
     alert("Kuch error aa gaya.");
