@@ -145,7 +145,7 @@
           <p>${job.description || ""}</p>
           <p>📍 ${job.location || "Location available nahi"}</p>
           <p class="payment">💰 ₹${job.payment || 0}</p>
-          <button><button onclick="applyJob(${job.id})">Apply Now</button></button>
+           <button onclick="applyJob(${job.id})">Apply Now</button>
         </div>
       `).join("");
 
@@ -186,7 +186,7 @@
     if (response.ok) {
       alert("Application successfully submit ho gayi! 🎉");
     } else {
-      alert(const errorText = await response.text();
+    const errorText = await response.text();
 alert("Error: " + errorText);
     }
   } catch (error) {
