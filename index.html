@@ -140,7 +140,7 @@
           <p>${job.description || ""}</p>
           <p>📍 ${job.location || "Location available nahi"}</p>
           <p class="payment">💰 ₹${job.payment || 0}</p>
-          <button>Apply Now</button>
+          <button><button onclick="applyJob(${job.id})">Apply Now</button></button>
         </div>
       `).join("");
 
