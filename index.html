@@ -176,7 +176,7 @@
         },
         body: JSON.stringify({
           job_id: jobId,
-          student_id: phone,
+          student_id: crypto.randomUUID(),
           name: name,
           phone: phone
         })
